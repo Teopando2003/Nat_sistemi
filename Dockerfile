@@ -1,3 +1,2 @@
-FROM php:7.2-apache-stretch
-
-COPY . /var/www/html
+FROM php:8.0-apache
+RUN apt-get update && apt-get upgrade -y

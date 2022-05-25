@@ -1,16 +1,22 @@
 version: '3.8'
 services:
-  beta:
-    container_name: beta
-    build:
-      context: ./ciao
-      dockerfile: Dockerfile
-    ports:
-      - "80"
-  alfa:
-    container_name: alfa
-    build:
-      context: ./ciao2
-      dockerfile: Dockerfile
-    ports:
-      - "80"
+    app1:
+        container_name: app1
+        hostname: app1
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - ./app1:/var/www/html/
+        ports:
+            - "5001:80"
+    app2:
+        container_name: app2
+        hostname: app2
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - ./app1:/var/www/html/
+        ports:
+            - "5002:80"

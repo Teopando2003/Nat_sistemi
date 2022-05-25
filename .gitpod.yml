@@ -3,4 +3,4 @@ ports:
     onOpen: open-browser
 
 tasks:
-  - command: sudo docker-compose up -d
+  - command: sudo docker-compose up --build

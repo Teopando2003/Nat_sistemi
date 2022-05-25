@@ -17,6 +17,6 @@ services:
             context: ./
             dockerfile: Dockerfile
         volumes:
-            - ./app1:/var/www/html/
+            - ./app2:/var/www/html/
         ports:
             - "5002:80"

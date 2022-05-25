@@ -1,27 +1,10 @@
 <?php
-
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, "127.0.0.2:80");
-
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
+//file_get_contents("127.0.0.1:5002");
+$ch = curl_init("10.0.5.2:5002");//127.0.0.1:5002
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
 $output = curl_exec($ch);
+curl_close($ch);
+echo "fatta richiesta a 5002";
 
-curl_close($ch);  
-
-if($_SERVER["REQUEST_METHOD"]=="GET"){
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, "127.0.0.1:80");
-
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        $output = curl_exec($ch);
-
-        curl_close($ch);  
-
-        echo "bela";
-}
 ?>
